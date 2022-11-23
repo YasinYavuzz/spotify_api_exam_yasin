@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -51,7 +52,7 @@ class _SearchPageState extends State<SearchPage> {
             SizedBox(
               height: 4.h,
             ),
-            const SearchField(),
+            FadeInDownBig(child: const SearchField()),
             SizedBox(
               height: 3.3.h,
             ),

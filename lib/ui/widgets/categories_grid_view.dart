@@ -11,18 +11,7 @@ class CategoriesGridView extends StatefulWidget {
 }
 
 class _CategoriesGridViewState extends State<CategoriesGridView> {
-  List<Color> itemsColor = [
-    Colors.red,
-    Colors.blue,
-    Colors.redAccent,
-    Colors.green,
-    Colors.orangeAccent,
-    Colors.pinkAccent,
-    Colors.pinkAccent,
-    Colors.purpleAccent,
-    Colors.purpleAccent,
-    Colors.purpleAccent
-  ];
+  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -48,16 +37,15 @@ class _CategoriesGridViewState extends State<CategoriesGridView> {
                 builder: (BuildContext context, CategoriesProvider value,
                     Widget? child) {
                   return value.response.categories != null ? Container(
-                    padding: const EdgeInsets.only(left: 15, top: 20),
+                    padding: const EdgeInsets.only(left: 10, top: 85),
                     decoration: BoxDecoration(
                         image:  DecorationImage(image: NetworkImage(value.response.categories!.items![index].icons![0].url.toString()),fit: BoxFit.fitWidth),
                         //color: itemsColor[index],
                         borderRadius: BorderRadius.circular(8)),
-                    child: Text(
-                      '${value.response.categories!.items![index].name}',
-                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    child: Text('${value.response.categories!.items![index].name!.toUpperCase()}',
+                      style: const TextStyle(color: Colors.white, fontSize: 15,fontWeight: FontWeight.bold),
                     ),
-                  ): Center(child: CircularProgressIndicator());
+                  ): const Center(child: CircularProgressIndicator());
                 },
               ));
         },

@@ -7,7 +7,7 @@ import 'package:spotify_api_exam_yasin/providers/categories_provider.dart';
 final Dio _dio =
     Dio(BaseOptions(baseUrl: "https://api.spotify.com/v1/", headers: {
   "Authorization":
-      "Bearer BQCOyqKwIv_c-7QmnJAYw1pzZniugBJ82XnewPGW17ELsCy6W7doWTVB1yUl3WTZJ8YMqfi1tjGwmYkef7L5KsI38V-hc9TCJj6GHM1KaWYmpUgakHtH8Wj4NE49P682lOBS2iq6OlJ9c-E5jdtdnZn2_toPhzolHdWUk2Y8h7m4AiCGwnJkRiWY0LEHptprHTKU8vsCXrtuLoiyEt826gK2uHHzxjaHst-jYwDwwS4B0OEx-wPcVKflnzVrUAEK3EnXONWjvhEkh681D61G67IGmKW1F57rkn64haiC_Iwb"
+      "Bearer BQAG_w4gxvP6UMn0Vr37mYQUove1BFkSmwMvOgHaD4CB1JkH3OmUR1hKpfVeqYFRrhmLhqXGPRT0xOD728v9SIHaSYLIWhVmlDQ2q9ljVclIdcLmIoGuLP2pvhrovQtj55YLol4Ryhp-6ZljqNGUqo9rTFJHJ4mxKgf1q_pDxWQZ-xWFNCbONBGSsHQaIFn6K-5vtObsIQiRLbDOvZ_IrvmuE6qvt1cYKW6rL19L-Ah8DmSqIvFoilR2EBdA02ZxW6ZEIlYksx3hyX_P7ntHwsmGO58-VmLTWDBdA441lSxf"
 }));
 
 Future<CategoriesModel?> getSpotifyModel() async {
