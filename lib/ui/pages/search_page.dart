@@ -1,12 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:spotify_api_exam_yasin/models/categories_model.dart';
+import 'package:spotify_api_exam_yasin/providers/categories_provider.dart';
 import 'package:spotify_api_exam_yasin/ui/widgets/bot_nav_bar.dart';
 import 'package:spotify_api_exam_yasin/ui/widgets/categories_grid_view.dart';
 import 'package:spotify_api_exam_yasin/ui/widgets/search_field.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
 
+  @override
+  State<SearchPage> createState() => _SearchPageState();
+}
+
+
+class _SearchPageState extends State<SearchPage> {
+  CategoriesProvider? categoriesProvider;
+  // CategoriesModel? categoriesModel;
+  @override
+  void initState() {
+    categoriesProvider = Provider.of<CategoriesProvider>(context, listen: false);
+    categoriesProvider!.getSpotifyData();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
