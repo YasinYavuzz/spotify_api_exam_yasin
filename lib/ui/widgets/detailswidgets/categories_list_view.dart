@@ -28,8 +28,8 @@ class CategoriesListView extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: FontWeight.w600),
             ),
-            leading:
-                CircleAvatar(radius: 35, backgroundImage: NetworkImage('url')),
+            // leading:
+            //     CircleAvatar(radius: 35, backgroundImage: NetworkImage('url')),
             trailing: Text(
               'Albüm Adı',
               style: TextStyle(

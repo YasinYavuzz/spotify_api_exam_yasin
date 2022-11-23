@@ -15,7 +15,7 @@ final Dio _dio =
 
 Future<CategoriesModel?> getSpotifyCategoriesModel() async {
   CategoriesModel categoriesModel;
-  CategoriesProvider? categoriesProvider;
+  // CategoriesProvider? categoriesProvider;
   try {
     // final response = await http.get(Uri.parse(
     //     "https://api.openweathermap.org/data/2.5/weather?lat=41.025152&lon=29.019159&appid=cd2a806afdcc70e043cc8c61241ab5e3&units=metric"));
@@ -40,19 +40,19 @@ Future<CategoriesModel?> getSpotifyCategoriesModel() async {
   return null;
 }
 
-Future<PlaylistModel?> getSpotifyPlaylistModel() async {
+Future<PlaylistModel?> getSpotifyPlaylistModel(String? categories_id) async {
   PlaylistModel playlistModel;
-  PlaylistProvider? playlistProvider;
-  String categoryId = "";
+  // PlaylistProvider? playlistProvider;
+  // String categoryId = "";
   try {
     // final response = await http.get(Uri.parse(
     //     "https://api.openweathermap.org/data/2.5/weather?lat=41.025152&lon=29.019159&appid=cd2a806afdcc70e043cc8c61241ab5e3&units=metric"));
     try {
       final response = await _dio
-          .get("browse/categories/$categoryId/playlists?country=TR&limit=10&offset=5");
+          .get("browse/categories/$categories_id/playlists?country=TR&limit=10&offset=5");
 
       playlistModel = PlaylistModel.fromJson(response.data);
-      print(playlistModel.playlists);
+      print(response.data);
       if (response.statusCode == 200) {
         print("Çalışıyor");
       } else {

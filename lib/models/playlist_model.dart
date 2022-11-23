@@ -75,8 +75,8 @@ class Items {
   List<Images>? images;
   String? name;
   Owner? owner;
-  Null? primaryColor;
-  Null? public;
+  dynamic primaryColor;
+  dynamic public;
   String? snapshotId;
   Tracks? tracks;
   String? type;
@@ -168,9 +168,9 @@ class ExternalUrls {
 }
 
 class Images {
-  Null? height;
+  dynamic height;
   String? url;
-  Null? width;
+  dynamic width;
 
   Images({this.height, this.url, this.width});
 
