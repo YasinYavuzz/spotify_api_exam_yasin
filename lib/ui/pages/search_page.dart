@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotify_api_exam_yasin/providers/categories_provider.dart';
+import 'package:spotify_api_exam_yasin/providers/playlist_provider.dart';
 import 'package:spotify_api_exam_yasin/ui/widgets/searchwidgets/bot_nav_bar.dart';
 import 'package:spotify_api_exam_yasin/ui/widgets/searchwidgets/categories_grid_view.dart';
 import 'package:spotify_api_exam_yasin/ui/widgets/searchwidgets/search_field.dart';
@@ -14,13 +15,13 @@ class SearchPage extends StatefulWidget {
   State<SearchPage> createState() => _SearchPageState();
 }
 
-
 class _SearchPageState extends State<SearchPage> {
   CategoriesProvider? categoriesProvider;
   // CategoriesModel? categoriesModel;
   @override
   void initState() {
-    categoriesProvider = Provider.of<CategoriesProvider>(context, listen: false);
+    categoriesProvider =
+        Provider.of<CategoriesProvider>(context, listen: false);
     categoriesProvider!.getSpotifyCategoriesData();
     super.initState();
   }
@@ -65,7 +66,9 @@ class _SearchPageState extends State<SearchPage> {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 1.h,),
+            SizedBox(
+              height: 1.h,
+            ),
             FadeInLeft(child: const CategoriesGridView())
           ],
         ),

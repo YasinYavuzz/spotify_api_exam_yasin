@@ -38,7 +38,7 @@ class _CategoriesGridViewState extends State<CategoriesGridView> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DetailsPage(categories_id: '${value.response.categories!.items![index].id}',),
+                            builder: (context) => DetailsPage(categories_id: '${value.response.categories!.items![index].id}',index: index),
                           ));
                     },
                     child: Card(
