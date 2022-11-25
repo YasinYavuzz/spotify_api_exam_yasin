@@ -8,11 +8,19 @@ class SearchField extends StatefulWidget {
 }
 
 class _SearchFieldState extends State<SearchField> {
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextField(
+        //controller: _controller,
+        onChanged: (value) {
+          
+        },
+        onTap: () {
+          print('tıklandı');
+        },
         decoration: InputDecoration(
             hintText: 'Ne dinlemek istiyorsun?',
             // hintStyle: const TextStyle(),

@@ -30,7 +30,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       extendBody: true,
       backgroundColor: Colors.grey[800],
-      bottomNavigationBar: const BotNavBar(),
+      // bottomNavigationBar: const BotNavBar(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
