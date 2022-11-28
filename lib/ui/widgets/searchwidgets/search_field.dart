@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_api_exam_yasin/ui/pages/search_field_page.dart';
 
 class SearchField extends StatefulWidget {
   const SearchField({super.key});
@@ -13,6 +14,16 @@ class _SearchFieldState extends State<SearchField> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextField(
+        //controller: _controller,
+        onTap: () {
+          Navigator.push<void>(
+            context,
+            MaterialPageRoute<void>(
+              builder: (BuildContext context) => const SearchFieldPage(),
+            ),
+          );
+        },
+
         decoration: InputDecoration(
             hintText: 'Ne dinlemek istiyorsun?',
             // hintStyle: const TextStyle(),

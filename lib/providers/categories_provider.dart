@@ -6,8 +6,8 @@ class CategoriesProvider extends ChangeNotifier{
   CategoriesModel response = CategoriesModel();
   
 
-  getSpotifyData() async {
-    response = (await getSpotifyModel())!;
+  getSpotifyCategoriesData() async {
+    response = (await getSpotifyCategoriesModel())!;
     notifyListeners();
   }
 } 

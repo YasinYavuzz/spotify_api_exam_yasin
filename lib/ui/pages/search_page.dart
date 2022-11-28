@@ -2,11 +2,11 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:spotify_api_exam_yasin/models/categories_model.dart';
 import 'package:spotify_api_exam_yasin/providers/categories_provider.dart';
-import 'package:spotify_api_exam_yasin/ui/widgets/bot_nav_bar.dart';
-import 'package:spotify_api_exam_yasin/ui/widgets/categories_grid_view.dart';
-import 'package:spotify_api_exam_yasin/ui/widgets/search_field.dart';
+import 'package:spotify_api_exam_yasin/providers/playlist_provider.dart';
+import 'package:spotify_api_exam_yasin/ui/widgets/searchwidgets/bot_nav_bar.dart';
+import 'package:spotify_api_exam_yasin/ui/widgets/searchwidgets/categories_grid_view.dart';
+import 'package:spotify_api_exam_yasin/ui/widgets/searchwidgets/search_field.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -15,14 +15,14 @@ class SearchPage extends StatefulWidget {
   State<SearchPage> createState() => _SearchPageState();
 }
 
-
 class _SearchPageState extends State<SearchPage> {
   CategoriesProvider? categoriesProvider;
   // CategoriesModel? categoriesModel;
   @override
   void initState() {
-    categoriesProvider = Provider.of<CategoriesProvider>(context, listen: false);
-    categoriesProvider!.getSpotifyData();
+    categoriesProvider =
+        Provider.of<CategoriesProvider>(context, listen: false);
+    categoriesProvider!.getSpotifyCategoriesData();
     super.initState();
   }
   @override
@@ -30,7 +30,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       extendBody: true,
       backgroundColor: Colors.grey[800],
-      bottomNavigationBar: const BotNavBar(),
+      // bottomNavigationBar: const BotNavBar(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -69,7 +69,7 @@ class _SearchPageState extends State<SearchPage> {
             SizedBox(
               height: 1.h,
             ),
-            const CategoriesGridView()
+            FadeInLeft(child: const CategoriesGridView())
           ],
         ),
       ),
