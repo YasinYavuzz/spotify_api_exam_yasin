@@ -7,15 +7,9 @@ import 'package:spotify_api_exam_yasin/providers/home_artists_provider.dart';
 import 'package:spotify_api_exam_yasin/providers/playlist_provider.dart';
 import 'package:spotify_api_exam_yasin/providers/search_provider.dart';
 import 'package:spotify_api_exam_yasin/providers/users_profile_provider.dart';
-import 'package:spotify_api_exam_yasin/ui/pages/search_page.dart';
-import 'package:spotify_api_exam_yasin/ui/pages/users_page.dart';
 import 'package:spotify_api_exam_yasin/ui/widgets/searchwidgets/bot_nav_bar.dart';
-
-
 import 'providers/home_albums_provider.dart';
 import 'providers/home_playlists_provider.dart';
-import 'ui/pages/home_page.dart';
-import 'ui/pages/search_field_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,7 +50,7 @@ class MyApp extends StatelessWidget {
             ),
           ],
           child: const MaterialApp(
-            home: SearchFieldPage(),
+            home: MainPage(),
             debugShowCheckedModeBanner: false,
             
           ),

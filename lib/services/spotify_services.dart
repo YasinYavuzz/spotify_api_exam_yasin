@@ -13,7 +13,7 @@ import '../models/playlist_model.dart';
 final Dio _dio =
     Dio(BaseOptions(baseUrl: "https://api.spotify.com/v1/", headers: {
   "Authorization":
-      "Bearer BQDxanm1mu3id5MreRnK0r0AQuvA7nHI4-mX7_cJYOkKdbhVvYKmmYOOWcFEaXbPxXQQ67ZTZ2OTYX8TAmB7rJLd18R_Rz90n3QGqO3B4-dJJ3dE8mv1grQeoicJYSYGcP9TLpINf3t2hEW-ipuxk7lglPdyMhqjxJa0FOZWbIkhzb6TmkeyHJaPq4G9BgfMKpnFEGs-TtH5e9fNvQjcTqF9Ewrc3XrBYSQf5w8oZ4WPuFqbZrppZ3dPb3fUKOlBXA6_1SVJemDTWKBW9BscyhgKyNFtZptajX4evmDAPFmcp2NWmqfZVEsrcFoGlO9HL_SOEFG7bYsB"
+      "Bearer BQCQzRbpcg0MOTGfJZgK9ZIS8-0Ft-Cc0zAfWBIr2cCcR10KsUu6r_N_cKLI4SVszPLRCBtpB7cfk8rjjHsGSJ14rGbZ83oCHOMZkshoGu1cnF802VUIArlSqHfSIodoXjzfvxKvDmx82lSEYIClMmlG45ZTQoNCHdosExnUJW-5Vvtjr8qvS8IxAPF5t7GYqunCepunIsLvZdajYalsBnlwMvT7__3BCkPQg6nEr4EsMnZNVNnfKugRRI7ccjSNwSYYsjoKKWnTjTuLSbEJL1cgyLkXzmbenmlYmjoV71d9uEOkOYFaHfV-s6Ycn-yGwqfekaF7Oe80"
 }));
 
 Future<CategoriesModel?> getSpotifyCategoriesModel() async {
@@ -183,8 +183,9 @@ Future<HomePlaylistsModel?> getHomePlaylistsModel() async {
   return null;
 }
 
-Future<SearchModels?> getSearchModel() async {
+Future<SearchModels?> getSearchModel({required String query}) async {
   SearchModels searchModels;
+  // String query = "remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis";
   // PlaylistProvider? playlistProvider;
   // String categoryId = "";
   try {
@@ -192,8 +193,7 @@ Future<SearchModels?> getSearchModel() async {
     //     "https://api.openweathermap.org/data/2.5/weather?lat=41.025152&lon=29.019159&appid=cd2a806afdcc70e043cc8c61241ab5e3&units=metric"));
     try {
       final response = await _dio
-          .get("search?q=Yasin&type=track%2Cartist&market=TR&limit=10&offset=0");
-
+          .get("search?q=$query&type=track%2Cartist&market=TR&limit=10&offset=5");
       searchModels = SearchModels.fromJson(response.data);
       // print(homeAlbumsModel.albums![0].albumType![0]);
       if (response.statusCode == 200) {
