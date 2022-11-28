@@ -1,16 +1,2 @@
-# spotify_api_exam_yasin
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![yasin_yavuz_spotify](https://user-images.githubusercontent.com/99301596/204243372-ca3318cf-6c9c-4b1b-a360-1dfe0a7802b7.gif)
